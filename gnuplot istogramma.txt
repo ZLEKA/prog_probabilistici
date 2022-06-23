@@ -1,0 +1,8 @@
+gnuplot> n=100
+gnuplot> max=14000
+gnuplot> min=9000
+gnuplot> altezza=(max-min)/n
+gnuplot> hist(x,altezza)=altezza*floor(x/altezza)+altezza/2.0
+gnuplot> set box altezza*0.9
+gnuplot> set style fill solid 0.5
+gnuplot> plot "dati.txt" using (hist($1,altezza)):(1.0) smoot freq with boxes lc rgb"green" notitle
